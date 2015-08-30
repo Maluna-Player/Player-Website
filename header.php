@@ -1,7 +1,7 @@
 <header>
     <div id="headerContainer">
         <div id="mainTitle">
-            <img src="images/icon.ico" alt="Logo du Player" id="logo" />
+            <a href="index.php"><img src="images/icon.ico" alt="Logo du Player" id="logo" /></a>
             <h1 id="title">
                 <span class="orange">Net</span><span class="pink">work</span>
                 <br/>
