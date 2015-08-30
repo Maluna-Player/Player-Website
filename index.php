@@ -6,27 +6,7 @@
         <title>Player</title>
     </head>
     <body>
-        <header>
-            <div id="headerContainer">
-                <div id="mainTitle">
-                    <img src="images/icon.ico" alt="Logo du Player" id="logo" />
-                    <h1 id="title">
-                        <span class="orange">Net</span><span class="pink">work</span>
-                        <br/>
-                        <span class="purple">Pl</span><span class="blue">ay</span><span class="green">er</span>
-                    </h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html" class="greenHover">Accueil</a></li>
-                        <li><a href="downloads.html" class="pinkHover">Téléchargements</a></li>
-                        <li><a href="contribution.html" class="orangeHover">Contribution</a></li>
-                        <li><a href="https://github.com/Maluna34/Player" target="_blank" class="purpleHover">Git</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="bottom"></div>
-        </header>
+        <?php include("header.php"); ?>
 
         <div id="mainBloc">
             <section class="description">
@@ -64,13 +44,13 @@
                 <ul>
                     <li>
                         <figure>
-                            <a href="downloads.html"><span></span><img src="images/download.png" alt="image" /></a>
+                            <a href="downloads.php"><span></span><img src="images/download.png" alt="image" /></a>
                             <figcaption>Téléchargements</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
-                            <a href="contribution.html"><span></span><img src="images/contribution.png" alt="image" /></a>
+                            <a href="contribution.php"><span></span><img src="images/contribution.png" alt="image" /></a>
                             <figcaption>Contribution</figcaption>
                         </figure>
                     </li>
@@ -84,11 +64,6 @@
             </section>
         </div>
 
-        <footer>
-            <div id="footerContainer">
-                <p>Créé par Maluna | <a href="mailto:votrenom@bidule.com">Contact</a></p>
-                <i>Tous droits réservés</i>
-            </div>
-        </footer>
+        <?php include("footer.php"); ?>
     </body>
 </html>
