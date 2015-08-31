@@ -64,11 +64,53 @@ header
 	width: 100px;
 }
 
-nav
+#links, nav
 {
 	display: inline-block;
 	width: 660px;
+}
+
+#links
+{
 	text-align: right;
+}
+
+#signInLink, #signUpLink
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+
+	color: white;
+	text-decoration: none;
+
+	border: 1px solid;
+	border-radius: 5px;
+	padding: 3px 8px 0px 8px;
+}
+
+#signInLink
+{
+	background-color: rgb(51, 102, 255);
+	border-color: rgb(0, 53, 210);
+	margin-right: 30px;
+}
+
+#signUpLink
+{
+	background-color: rgb(11, 168, 105);
+	border-color: rgb(7, 120, 75);
+	margin-right: 5px;
+}
+
+#signInLink:hover, #signUpLink:hover
+{
+	opacity: 0.8;
+	filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+nav
+{
+	padding-top: 10px;
 	padding-bottom: 15px;
 }
 
@@ -82,7 +124,7 @@ nav li
 	display: inline-block;
 	float: left;
 	line-height: normal;
-	margin-left: 25px;
+	margin-left: 45px;
 }
 
 nav a 
@@ -205,6 +247,12 @@ div.bottom
 .download h2, .contribution h2
 {
 	text-align: center;
+}
+
+.connection table
+{
+	padding-right: 100px;
+	margin: 0 auto;
 }
 
 /* Couleurs */
