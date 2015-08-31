@@ -13,7 +13,8 @@
                 <li><a href="index.php" class="greenHover">Accueil</a></li>
                 <li><a href="downloads.php" class="pinkHover">Téléchargements</a></li>
                 <li><a href="contribution.php" class="orangeHover">Contribution</a></li>
-                <li><a href="https://github.com/Maluna34/Player" target="_blank" class="purpleHover">Git</a></li>
+                <li><a href="https://github.com/Maluna34/Player" target="_blank" class="blueHover">Git</a></li>
+                <li><a href="registration.php" class="purpleHover">Inscription</a></li>
             </ul>
         </nav>
     </div>
