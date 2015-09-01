@@ -62,9 +62,9 @@
 					}
 
 					if (!$registered)
-						echo '<br/><a href="registration.php">Revenir au formulaire</a>';
+						echo '<br/><br/><a href="registration.php">Revenir au formulaire</a>';
 					else
-						echo '<br/><a href="index.php">Revenir à l\'accueil</a>';
+						echo '<br/><br/><a href="index.php">Revenir à l\'accueil</a>';
 				?>
 			</p>
 		</div>
