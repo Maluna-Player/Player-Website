@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,6 +50,8 @@
 							{
 								echo 'Vous êtes connectés en tant que <em>' . $_POST['login'] . '</em>';
 								$registered = true;
+
+								$_SESSION['user'] = $_POST['login'];
 							}
 						}
 

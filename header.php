@@ -10,8 +10,26 @@
         </div>
 
         <div id="links">
-            <a href="registration.php" id="signUpLink">Inscription</a>
-            <a href="connection.php" id="signInLink">Connexion</a>
+            <?php
+                if (!isset($_SESSION['user']))
+                {
+                    ?>
+                    <a href="registration.php" id="signUpLink">Inscription</a>
+                    <a href="connection.php" id="signInLink">Connexion</a>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <span id="signedBox">
+                        <span id="signed">Connecté : </span>
+                        <span id="userName"><?php echo $_SESSION['user']; ?></span>
+                    </span>
+                    <a href="disconnection.php" id="disconnectionLink">Déconnexion</a>
+                    <?php
+                }
+            ?>
+
             <nav>
                 <ul>
                     <li><a href="index.php" class="greenHover">Accueil</a></li>

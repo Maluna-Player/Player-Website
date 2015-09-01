@@ -75,7 +75,7 @@ header
 	text-align: right;
 }
 
-#signInLink, #signUpLink
+#signInLink, #signUpLink, #signedBox, #disconnectionLink
 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
@@ -102,7 +102,31 @@ header
 	margin-right: 5px;
 }
 
-#signInLink:hover, #signUpLink:hover
+#signedBox
+{
+	background-color: rgb(238, 68, 72);
+	border-color: rgb(187, 17, 21);
+	margin-right: 5px;
+}
+
+#signed
+{
+	font-size: 0.9em;
+}
+
+#userName
+{
+	font-family: BoycottRegular, Arial, Helvetica, sans-serif;
+}
+
+#disconnectionLink
+{
+	background-color: rgb(162, 45, 153);
+	border-color: rgb(116, 33, 109);
+	margin-right: 30px;
+}
+
+#signInLink:hover, #signUpLink:hover, #disconnectionLink:hover
 {
 	opacity: 0.8;
 	filter: alpha(opacity=80); /* For IE8 and earlier */

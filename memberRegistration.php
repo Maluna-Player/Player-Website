@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -53,6 +57,8 @@
 
 								echo 'Inscription réalisée avec succès !';
 								$registered = true;
+
+								$_SESSION['user'] = $_POST['login'];
 							}	
 						}
 					}
