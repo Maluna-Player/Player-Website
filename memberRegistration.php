@@ -10,7 +10,7 @@
         <title>Player</title>
     </head>
     <body>
-        <?php include("header.php"); ?>
+        <?php include("blocs/header.php"); ?>
 
         <div id="mainBloc">
 			<p>
@@ -75,6 +75,6 @@
 			</p>
 		</div>
 
-        <?php include("footer.php"); ?>
+        <?php include("blocs/footer.php"); ?>
     </body>
 </html>

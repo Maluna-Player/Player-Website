@@ -23,7 +23,7 @@
                     ?>
                     <span id="signedBox">
                         <span id="signed">Connecté : </span>
-                        <span id="userName"><?php echo $_SESSION['user']; ?></span>
+                        <span id="userName"><?php echo htmlspecialchars($_SESSION['user']); ?></span>
                     </span>
                     <a href="disconnection.php" id="disconnectionLink">Déconnexion</a>
                     <?php

@@ -10,7 +10,7 @@
         <title>Player</title>
     </head>
     <body>
-        <?php include("header.php"); ?>
+        <?php include("blocs/header.php"); ?>
 
         <div id="mainBloc">
 			<p>
@@ -48,7 +48,7 @@
 							}
 							else
 							{
-								echo 'Vous êtes connectés en tant que <em>' . $_POST['login'] . '</em>';
+								echo 'Vous êtes connectés en tant que <em>' . htmlspecialchars($_POST['login']) . '</em>';
 								$registered = true;
 
 								$_SESSION['user'] = $_POST['login'];
@@ -66,6 +66,6 @@
 			</p>
 		</div>
 
-        <?php include("footer.php"); ?>
+        <?php include("blocs/footer.php"); ?>
     </body>
 </html>
