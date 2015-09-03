@@ -13,20 +13,20 @@
             <?php
                 if (!isset($_SESSION['user']))
                 {
-                    ?>
+                ?>
                     <a href="registration.php" id="signUpLink">Inscription</a>
                     <a href="connection.php" id="signInLink">Connexion</a>
-                    <?php
+                <?php
                 }
                 else
                 {
-                    ?>
+                ?>
                     <span id="signedBox">
                         <span id="signed">Connecté : </span>
                         <span id="userName"><?php echo htmlspecialchars($_SESSION['user']); ?></span>
                     </span>
                     <a href="disconnection.php" id="disconnectionLink">Déconnexion</a>
-                    <?php
+                <?php
                 }
             ?>
 

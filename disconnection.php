@@ -1,5 +1,5 @@
 <?php
-	session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +13,15 @@
         <?php include("blocs/header.php"); ?>
 
         <div id="mainBloc">
-			<p>
-				<?php
-					session_destroy();				
-				?>
+            <p>
+                <?php
+                    session_destroy();
+                ?>
 
-				Vous êtes déconnecté.
-				<br/><br/><a href="index.php">Revenir à l'accueil</a>
-			</p>
-		</div>
+                Vous êtes déconnecté.
+                <br/><br/><a href="index.php">Revenir à l'accueil</a>
+            </p>
+        </div>
 
         <?php include("blocs/footer.php"); ?>
     </body>
