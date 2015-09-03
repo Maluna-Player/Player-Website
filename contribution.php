@@ -28,7 +28,7 @@
                             <table>
                                 <tr>
                                     <td><label for="issueTitle">Titre :</label></td>
-                                    <td><input type="text" name="issueTitle" id="issueTitle" size="60" maxlength="50" autofocus required /></td>
+                                    <td><input type="text" name="issueTitle" id="issueTitle" size="60" autofocus required /></td>
                                 </tr>
                                 <tr>
                                     <td><label for="issueContent">Description :</label></td>
