@@ -32,7 +32,7 @@
                             die('Erreur : ' . $e->getMessage());
                         }
 
-                        $request = $pdo->prepare('INSERT INTO contribution(title, content, author) VALUES(:title, :content, :author)');
+                        $request = $pdo->prepare('INSERT INTO contribution(title, content, author, sendingDate) VALUES(:title, :content, :author, NOW())');
                         $request->execute(array(':title' => $_POST['issueTitle'],
                                                 ':content' => $_POST['issueContent'],
                                                 ':author' => $_SESSION['user']));
