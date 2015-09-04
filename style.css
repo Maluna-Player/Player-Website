@@ -268,12 +268,12 @@ div.bottom
     margin-left: 30px;
 }
 
-.download h2, .contribution h2
+.download h2, .contributionForm h2
 {
     text-align: center;
 }
 
-.connection table
+table
 {
     padding-right: 100px;
     margin: 0 auto;
@@ -389,4 +389,73 @@ form
 td
 {
     vertical-align: top;
+}
+
+.contribution
+{
+    background-color: rgba(222, 222, 222, 0.6);
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 520px;
+
+    margin: auto;
+    margin-bottom: 25px;
+
+    text-align: left;
+}
+
+.contributionHeader
+{
+    background-color: rgb(126, 155, 207);
+    padding: 8px;
+    padding-top: 4px;
+    padding-bottom: 0;
+}
+
+.contributionLeftPart, .contributionDatetime
+{
+    display: inline-block;
+    margin-top: 6px;
+    vertical-align: top;
+}
+
+.contributionLeftPart
+{
+    width: 390px;
+    text-align: left;
+}
+
+.contributionTitle
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.contributionDatetime
+{
+    width: 90px;
+    margin-top: 8px;
+    margin-left: 10px;
+    text-align: right;
+}
+
+.contributionDate
+{
+    font-size: 110%;
+}
+
+.contributionSignature
+{
+    display: block;
+    text-align: left;
+}
+
+.contributionAuthor
+{
+    font-size: 110%;
+}
+
+.contributionContent
+{
+    margin-left: 10px;
 }
