@@ -67,31 +67,65 @@
                             <h2 class="small">Liste des contributions</h2>
 
                             <?php
-                                $request = $pdo->query('SELECT title, content, author,
-                                                        DATE_FORMAT(sendingDate, \'%d/%m/%Y\') AS date,
-                                                        DATE_FORMAT(sendingDate, \'%H:%i:%s\') AS time
-                                                        FROM contribution ORDER BY sendingDate DESC LIMIT 0, 10');
+                                /** Obtention du nombre de contributions **/
 
-                                while ($data = $request->fetch())
-                                {
-                                ?>
-                                    <div class="contribution">
-                                        <div class="contributionHeader">
-                                            <p class="contributionLeftPart">
-                                                <span class="contributionTitle"><?php echo htmlspecialchars($data['title']); ?></span>
-                                                <span class="contributionSignature">by <span class="contributionAuthor"><?php echo htmlspecialchars($data['author']); ?></span><span>
-                                            </p>
-                                            <p class="contributionDatetime">
-                                                <span class="contributionDate"><?php echo $data['date']; ?></span>
-                                                <span class="contributionTime"><?php echo $data['time']; ?></span>
-                                            </p>
-                                        </div>
-                                        <p class="contributionContent"><?php echo nl2br(htmlspecialchars($data['content'])); ?></p>
-                                    </div>
-                                <?php
-                                }
-
+                                $request = $pdo->query('SELECT COUNT(*) AS contribution_nb FROM contribution');
+                                $data = $request->fetch();
+                                $contributionNb = $data['contribution_nb'];
                                 $request->closeCursor();
+
+                                if ($contributionNb == 0)
+                                {
+                                    echo '<p>Aucune contribution</p>';
+                                }
+                                else
+                                {
+                                    $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+                                    $request = $pdo->query('SELECT title, content, author,
+                                                            DATE_FORMAT(sendingDate, \'%d/%m/%Y\') AS date,
+                                                            DATE_FORMAT(sendingDate, \'%H:%i:%s\') AS time
+                                                            FROM contribution ORDER BY sendingDate DESC
+                                                            LIMIT ' . ($page - 1) * 10 . ', 10');
+
+                                    while ($data = $request->fetch())
+                                    {
+                                    ?>
+                                        <div class="contribution">
+                                            <div class="contributionHeader">
+                                                <p class="contributionLeftPart">
+                                                    <span class="contributionTitle"><?php echo htmlspecialchars($data['title']); ?></span>
+                                                    <span class="contributionSignature">by <span class="contributionAuthor"><?php echo htmlspecialchars($data['author']); ?></span><span>
+                                                </p>
+                                                <p class="contributionDatetime">
+                                                    <span class="contributionDate"><?php echo $data['date']; ?></span>
+                                                    <span class="contributionTime"><?php echo $data['time']; ?></span>
+                                                </p>
+                                            </div>
+                                            <p class="contributionContent"><?php echo nl2br(htmlspecialchars($data['content'])); ?></p>
+                                        </div>
+                                    <?php
+                                    }
+
+                                    $request->closeCursor();
+
+                                    /** Affichage des liens vers les autres pages **/
+
+                                    if ($contributionNb % 10 == 0)
+                                        $pageNb = $contributionNb / 10;
+                                    else
+                                        $pageNb = $contributionNb / 10 + 1;
+
+                                    echo '<p>';
+                                    for ($i = 1; $i <= $pageNb; $i++)
+                                    {
+                                        if ($i == $page)
+                                            echo '<span>' . $i . '</span> ';
+                                        else
+                                            echo '<span><a href="contribution.php?page=' . $i . '"">' . $i . '</a></span> ';
+                                    }
+                                    echo '</p>';
+                                }
                             ?>
                         </section>
 
