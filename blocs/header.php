@@ -11,7 +11,7 @@
 
         <div id="links">
             <?php
-                if (!isset($_SESSION['user']))
+                if (!isset($_SESSION['id']))
                 {
                 ?>
                     <a href="registration.php" id="signUpLink">Inscription</a>

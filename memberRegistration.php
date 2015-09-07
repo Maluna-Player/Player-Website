@@ -56,9 +56,12 @@ include_once('class/DbConnection.class.php');
                                                         ':password' => sha1($_POST['password']),
                                                         ':mail' => $_POST['mail']));
 
+                                $memberId = $pdo->lastInsertId();
+
                                 echo 'Inscription réalisée avec succès !';
                                 $registered = true;
 
+                                $_SESSION['id'] = $memberId;
                                 $_SESSION['user'] = $_POST['login'];
                             }
                         }

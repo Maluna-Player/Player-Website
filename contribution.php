@@ -31,7 +31,7 @@ function formatContributionContent($content)
 
         <div id="mainBloc">
             <?php
-                if (!isset($_SESSION['user']))
+                if (!isset($_SESSION['id']))
                 {
                     include("blocs/connectionForm.php");
                 }
@@ -63,8 +63,8 @@ function formatContributionContent($content)
 
                     $pdo = DbConnection::getPDO();
 
-                    $request = $pdo->prepare('SELECT admin FROM member WHERE login = ?');
-                    $request->execute(array($_SESSION['user']));
+                    $request = $pdo->prepare('SELECT admin FROM member WHERE idMember = ?');
+                    $request->execute(array($_SESSION['id']));
                     $data = $request->fetch();
 
                     if ($data && $data['admin'])

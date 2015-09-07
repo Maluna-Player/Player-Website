@@ -29,7 +29,7 @@ include_once('class/DbConnection.class.php');
                     {
                         $pdo = DbConnection::getPDO();
 
-                        $request = $pdo->prepare('SELECT password FROM member WHERE login = ?');
+                        $request = $pdo->prepare('SELECT idMember, password FROM member WHERE login = ?');
                         $request->execute(array($_POST['login']));
 
                         if (!($row = $request->fetch()))
@@ -47,6 +47,7 @@ include_once('class/DbConnection.class.php');
                                 echo 'Vous êtes connectés en tant que <em>' . htmlspecialchars($_POST['login']) . '</em>';
                                 $registered = true;
 
+                                $_SESSION['id'] = $row['idMember'];
                                 $_SESSION['user'] = $_POST['login'];
                             }
                         }
