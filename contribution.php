@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once('class/DbConnection.class.php');
+
 function formatContributionContent($content)
 {
     $content = nl2br(htmlspecialchars($content));
@@ -59,15 +61,7 @@ function formatContributionContent($content)
 
                     <?php
 
-                    try
-                    {
-                        $pdo = new PDO('mysql:host=localhost;dbname=player_db;charset=utf8', 'root', '',
-                                        array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-                    }
-                    catch (Exception $e)
-                    {
-                        die('Erreur : ' . $e->getMessage());
-                    }
+                    $pdo = DbConnection::getPDO();
 
                     $request = $pdo->prepare('SELECT admin FROM member WHERE login = ?');
                     $request->execute(array($_SESSION['user']));

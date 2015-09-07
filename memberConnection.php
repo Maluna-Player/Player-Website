@@ -1,5 +1,9 @@
 <?php
-    session_start();
+
+session_start();
+
+include_once('class/DbConnection.class.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -23,15 +27,7 @@
                     }
                     else
                     {
-                        try
-                        {
-                            $pdo = new PDO('mysql:host=localhost;dbname=player_db;charset=utf8', 'root', '',
-                                            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-                        }
-                        catch (Exception $e)
-                        {
-                            die('Erreur : ' . $e->getMessage());
-                        }
+                        $pdo = DbConnection::getPDO();
 
                         $request = $pdo->prepare('SELECT password FROM member WHERE login = ?');
                         $request->execute(array($_POST['login']));
