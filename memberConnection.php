@@ -38,7 +38,7 @@ include_once('class/DbConnection.class.php');
                         }
                         else
                         {
-                            if ($row['password'] != md5($_POST['password']))
+                            if ($row['password'] != sha1($_POST['password']))
                             {
                                 echo 'Mot de passe incorrect !';
                             }

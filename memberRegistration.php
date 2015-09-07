@@ -49,7 +49,7 @@ include_once('class/DbConnection.class.php');
                                 $request = $pdo->prepare('INSERT INTO member(login, password, mail, registrationDate, admin)
                                                           VALUES(:login, :password, :mail, NOW(), 0)');
                                 $request->execute(array(':login' => $_POST['login'],
-                                                        ':password' => md5($_POST['password']),
+                                                        ':password' => sha1($_POST['password']),
                                                         ':mail' => $_POST['mail']));
 
                                 echo 'Inscription réalisée avec succès !';
