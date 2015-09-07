@@ -46,7 +46,8 @@ include_once('class/DbConnection.class.php');
                             {
                                 $request->closeCursor();
 
-                                $request = $pdo->prepare('INSERT INTO member(login, password, mail, admin) VALUES(:login, :password, :mail, 0)');
+                                $request = $pdo->prepare('INSERT INTO member(login, password, mail, registrationDate, admin)
+                                                          VALUES(:login, :password, :mail, NOW(), 0)');
                                 $request->execute(array(':login' => $_POST['login'],
                                                         ':password' => md5($_POST['password']),
                                                         ':mail' => $_POST['mail']));
