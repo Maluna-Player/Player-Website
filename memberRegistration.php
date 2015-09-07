@@ -29,7 +29,11 @@ include_once('class/DbConnection.class.php');
                         }
                         elseif (strlen($_POST['password']) < 6)
                         {
-                        echo 'Le mot de passe est trop court !';
+                            echo 'Le mot de passe est trop court !';
+                        }
+                        elseif (!preg_match('#[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}#', $_POST['mail']))
+                        {
+                            echo 'L\'adresse mail saisie est invalide !';
                         }
                         else
                         {
