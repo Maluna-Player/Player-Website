@@ -1,5 +1,20 @@
 <?php
-    session_start();
+
+session_start();
+
+function formatContributionContent($content)
+{
+    $content = nl2br(htmlspecialchars($content));
+
+    // Lien sur les adresses mail
+    $content = preg_replace('#[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}#', '<a href="mailto:$0">$0</a>', $content);
+
+    // Lien sur les urls
+    $content = preg_replace('#https?://[a-z0-9._/\?=&;-]+#i', '<a href="$0" target="_blank">$0</a>', $content);
+
+    return $content;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +117,7 @@
                                                     <span class="contributionTime"><?php echo $data['time']; ?></span>
                                                 </p>
                                             </div>
-                                            <p class="contributionContent"><?php echo nl2br(htmlspecialchars($data['content'])); ?></p>
+                                            <p class="contributionContent"><?php echo formatContributionContent($data['content']); ?></p>
                                         </div>
                                     <?php
                                     }
@@ -122,7 +137,7 @@
                                         if ($i == $page)
                                             echo '<span>' . $i . '</span> ';
                                         else
-                                            echo '<span><a href="contribution.php?page=' . $i . '"">' . $i . '</a></span> ';
+                                            echo '<span><a href="contribution.php?page=' . $i . '" class="pageLink">' . $i . '</a></span> ';
                                     }
                                     echo '</p>';
                                 }
