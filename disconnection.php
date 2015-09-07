@@ -15,6 +15,7 @@
         <div id="mainBloc">
             <p>
                 <?php
+                    $_SESSION = array();
                     session_destroy();
                 ?>
 
