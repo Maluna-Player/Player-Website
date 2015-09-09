@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,12 +6,14 @@
         <title>Player</title>
     </head>
     <body>
-        <?php include("blocs/header.php"); ?>
+        <?php include("controllers/header_C.php"); ?>
 
         <div id="mainBloc">
-            <?php include("blocs/connectionForm.php"); ?>
+            <p>
+                <?php echo $message; ?>
+            </p>
         </div>
 
-        <?php include("blocs/footer.php"); ?>
+        <?php include("views/footer.php"); ?>
     </body>
 </html>

@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +6,7 @@
         <title>Player</title>
     </head>
     <body>
-        <?php include("blocs/header.php"); ?>
+        <?php include("controllers/header_C.php"); ?>
 
         <div id="mainBloc">
             <section class="download">
@@ -21,6 +17,6 @@
             </section>
         </div>
 
-        <?php include("blocs/footer.php"); ?>
+        <?php include("views/footer.php"); ?>
     </body>
 </html>

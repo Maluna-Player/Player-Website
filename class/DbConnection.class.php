@@ -14,7 +14,6 @@ class DbConnection
             die('Erreur : ' . $e->getMessage());
         }
 
-
         return $pdo;
     }
 }

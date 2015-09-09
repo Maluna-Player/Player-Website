@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,20 +6,15 @@
         <title>Player</title>
     </head>
     <body>
-        <?php include("blocs/header.php"); ?>
+        <?php include("controllers/header_C.php"); ?>
 
         <div id="mainBloc">
             <p>
-                <?php
-                    $_SESSION = array();
-                    session_destroy();
-                ?>
-
                 Vous êtes déconnecté.
                 <br/><br/><a href="index.php">Revenir à l'accueil</a>
             </p>
         </div>
 
-        <?php include("blocs/footer.php"); ?>
+        <?php include("views/footer.php"); ?>
     </body>
 </html>
