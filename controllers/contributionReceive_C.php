@@ -2,10 +2,14 @@
 
 include_once('class/Contribution.class.php');
 
-if (!isset($_POST['issueTitle']) || !isset($_POST['issueContent']))
+if (!isset($_SESSION['user']))
+{
+    $message = 'Il faut être connecté pour accéder à cette partie du site !';
+}
+elseif (!isset($_POST['issueTitle']) || !isset($_POST['issueContent']))
 {
     $message = 'Veillez à bien renseigner le titre et le contenu de votre contribution.'
-               . '<br/><br/><a href="index.php?page=contribution">Revenir au formulaire</a>';
+                . '<br/><br/><a href="index.php?page=contributions">Revenir au formulaire</a>';
 }
 else
 {

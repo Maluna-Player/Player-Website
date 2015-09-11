@@ -10,11 +10,11 @@
         </div>
 
         <div id="links">
-            <span id="signedBox">
+            <a href="index.php?page=profile/profile" id="signedLink" class="redButton">
                 <span id="signed">Connecté : </span>
                 <span id="userName"><?php echo htmlspecialchars($_SESSION['user']); ?></span>
-            </span>
-            <a href="index.php?page=disconnection" id="disconnectionLink">Déconnexion</a>
+            </a>
+            <a href="index.php?page=disconnection" id="disconnectionLink" class="purpleButton">Déconnexion</a>
 
             <nav>
                 <ul>

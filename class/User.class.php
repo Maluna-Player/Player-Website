@@ -4,6 +4,8 @@ class User
 {
     private $login;
 
+    private $password;
+
     private $mail;
 
     private $admin;
@@ -19,6 +21,7 @@ class User
         if ($data = $request->fetch())
         {
             $this->login = $data['login'];
+            $this->password = $data['password'];
             $this->mail = $data['mail'];
             $this->admin = $data['admin'];
         }
@@ -31,9 +34,30 @@ class User
         return $this->login;
     }
 
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
     public function isAdmin()
     {
         return $this->admin;
+    }
+
+    public function setPassword($newPassword)
+    {
+        $pdo = DbConnection::getPDO();
+
+        $request = $pdo->prepare('UPDATE member SET password = :newPassword WHERE login = :login');
+        $request->execute(array(':newPassword' => $newPassword,
+                                ':login' => $this->login));
+
+        $this->password = $newPassword;
     }
 
     public function setMail($newMail)

@@ -10,8 +10,8 @@
         </div>
 
         <div id="links">
-            <a href="index.php?page=registration" id="signUpLink">Inscription</a>
-            <a href="index.php?page=connection" id="signInLink">Connexion</a>
+            <a href="index.php?page=registration" id="signUpLink" class="greenButton">Inscription</a>
+            <a href="index.php?page=connection" id="signInLink" class="blueButton">Connexion</a>
 
             <nav>
                 <ul>

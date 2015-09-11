@@ -75,7 +75,9 @@ header
     text-align: right;
 }
 
-#signInLink, #signUpLink, #signedBox, #disconnectionLink
+/** Boutons **/
+
+.button, .redButton, .greenButton, .blueButton, .purpleButton
 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -88,24 +90,43 @@ header
     padding: 3px 8px 0px 8px;
 }
 
-#signInLink
+.button:hover, .redButton:hover, .greenButton:hover, .blueButton:hover, .purpleButton:hover
 {
-    background-color: rgb(51, 102, 255);
-    border-color: rgb(0, 53, 210);
-    margin-right: 30px;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
-#signUpLink
-{
-    background-color: rgb(11, 168, 105);
-    border-color: rgb(7, 120, 75);
-    margin-right: 5px;
-}
-
-#signedBox
+.redButton
 {
     background-color: rgb(238, 68, 72);
     border-color: rgb(187, 17, 21);
+}
+
+.greenButton
+{
+    background-color: rgb(51, 102, 255);
+    border-color: rgb(0, 53, 210);
+}
+
+.blueButton
+{
+    background-color: rgb(11, 168, 105);
+    border-color: rgb(7, 120, 75);
+}
+
+.purpleButton
+{
+    background-color: rgb(162, 45, 153);
+    border-color: rgb(116, 33, 109);
+}
+
+#signInLink, #disconnectionLink
+{
+    margin-right: 30px;
+}
+
+#signUpLink, #signedLink
+{
     margin-right: 5px;
 }
 
@@ -117,19 +138,6 @@ header
 #userName
 {
     font-family: BoycottRegular, Arial, Helvetica, sans-serif;
-}
-
-#disconnectionLink
-{
-    background-color: rgb(162, 45, 153);
-    border-color: rgb(116, 33, 109);
-    margin-right: 30px;
-}
-
-#signInLink:hover, #signUpLink:hover, #disconnectionLink:hover
-{
-    opacity: 0.8;
-    filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
 nav
@@ -277,6 +285,12 @@ table
 {
     padding-right: 100px;
     margin: 0 auto;
+}
+
+.profile td, .profile th
+{
+    text-align: left;
+    padding: 7px 15px;
 }
 
 /* Couleurs */
