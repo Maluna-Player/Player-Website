@@ -1,10 +1,11 @@
 <?php
 
 include_once('class/User.class.php');
+include_once('checkFormFields.php');
 
 $registered = false;
 
-if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['secondPassword']) && isset($_POST['mail']))
+if (checkFormFields(array('login', 'password', 'secondPassword', 'mail')))
 {
     if ($_POST['password'] != $_POST['secondPassword'])
     {

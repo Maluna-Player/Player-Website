@@ -1,12 +1,13 @@
 <?php
 
 include_once('class/User.class.php');
+include_once('checkFormFields.php');
 
 if (!isset($_SESSION['id']))
 {
     header('Location: index.php');
 }
-elseif (isset($_POST['oldPassword']) && isset($_POST['newPassword']) && isset($_POST['secondNewPassword']))
+elseif (checkFormFields(array('oldPassword', 'newPassword', 'secondNewPassword')))
 {
     $user = new User($_SESSION['id']);
 
@@ -26,7 +27,7 @@ elseif (isset($_POST['oldPassword']) && isset($_POST['newPassword']) && isset($_
 
     include('views/profile/passwordModificationResult_V.php');
 }
-elseif (isset($_POST['newMail']))
+elseif (checkFormFields(array('newMail')))
 {
     $user = new User($_SESSION['id']);
     $user->setMail($_POST['newMail']);

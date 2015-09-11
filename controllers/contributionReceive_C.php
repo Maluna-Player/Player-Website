@@ -1,12 +1,13 @@
 <?php
 
 include_once('class/Contribution.class.php');
+include_once('checkFormFields.php');
 
 if (!isset($_SESSION['user']))
 {
     $message = 'Il faut être connecté pour accéder à cette partie du site !';
 }
-elseif (!isset($_POST['issueTitle']) || !isset($_POST['issueContent']))
+elseif (!checkFormFields(array('issueTitle', 'issueContent')))
 {
     $message = 'Veillez à bien renseigner le titre et le contenu de votre contribution.'
                 . '<br/><br/><a href="index.php?page=contributions">Revenir au formulaire</a>';

@@ -1,10 +1,11 @@
 <?php
 
 include_once('class/User.class.php');
+include_once('checkFormFields.php');
 
 $registered = false;
 
-if (!isset($_POST['login']) || !isset($_POST['password']))
+if (!checkFormFields(array('login', 'password')))
 {
     $message = 'Le login ou le mot de passe n\'a pas été renseigné !';
 }
